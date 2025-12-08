@@ -4,58 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Rexburg</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Lexend+Deca:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&family=Delius&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header>
-        <div class="logo">Explore Rexburg</div>
+        <div class="logo">
+            <img src="image4.png" alt="Logo">
+        </div>
+
         <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="explore.html">Explore</a>
-            <a href="favorites.html">Favorites</a>
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Favorites</a>
         </nav>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Discover Hidden Gems in Rexburg</h1>
-            <p>Your guide to the best local hangouts, attractions, and experiences.</p>
-            <a href="explore.html" class="btn">Start Exploring</a>
-        </div>
+        <h1>Welcome to Explore Rexburg!</h1>
+        <p class="subtitle">
+            The purpose of this site is to be a guide to people that have recently moved to or are visiting Rexburg.
+            This site helps you discover local hidden gems and explore Rexburg smarter.
+        </p>
     </section>
 
-    <section class="featured">
-        <h2>Featured Locations</h2>
-        <div class="card-container">
+    <!-- DISCOVER SECTION -->
+    <section class="discover">
+        <h2>Looking for something new?</h2>
 
-            <div class="card">
-                <h3>Rexburg Rapids</h3>
-                <p>Cool off and enjoy slides, a lazy river, splash park, and more during the summer!</p>
+        <div class="discover-container">
+
+            <!-- FATCATS -->
+            <div class="discover-row">
+                <a href="https://www.fatcatsfun.com/locations/rexburg/?gad_source=1&gad_campaignid=21099370074&gbraid=0AAAAA9cOu5pfYcaMLTpBIl8o_SUChTMsd&gclid=Cj0KCQiA6NTJBhDEARIsAB7QHD2_2yxkHnSsCbSLhMwBYOGqbQqAEuqem6Q-Jm0qyDdtA1Bye5iT6PUaAlPoEALw_wcB"
+                   target="_blank">
+                    <img src="image5.jpg" alt="Fat Cats" class="discover-image">
+                </a>
+
+                <p class="desc">
+                    Fat Cats Rexburg is a family-friendly entertainment center with bowling, movies, arcade 
+                    games, and delicious food. It’s perfect for date nights, group activities, or casual fun with friends.
+                </p>
             </div>
 
-            <div class="card">
-                <h3>Fat Cats Rexburg</h3>
-                <p>Enjoy bowling, movies, arcade games, mini-golf, and great food all in one place.</p>
-            </div>
+            <!-- REXBURG RAPIDS -->
+            <div class="discover-row reverse">
+                <a href="https://www.rexburg.org/o/rapids" target="_blank">
+                    <img src="image6.png" alt="Rexburg Rapids" class="discover-image">
+                </a>
 
-            <div class="card">
-                <h3>Yellowstone Bear World</h3>
-                <p>Drive through to see elk, bison, black bears, and grizzlies up close.</p>
-            </div>
-
-            <div class="card">
-                <h3>BYU–Idaho Ropes Course</h3>
-                <p>Challenge yourself on three levels of fun, thrilling obstacles.</p>
+                <p class="desc">
+                    Rexburg Rapids is the best way to cool off in the summer! Featuring water slides, a lazy river,
+                    splash zones, and more — it's a local favorite for families and students.
+                </p>
             </div>
 
         </div>
     </section>
-
-    <footer>
-        <p>© 2025 Explore Rexburg | Created by Brayden Dawson</p>
-    </footer>
 
 </body>
 </html>

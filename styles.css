@@ -1,126 +1,120 @@
-/* ---------- Fonts ---------- */
+/* COLOR PALETTE */
+:root {
+    --primary: #F2D0A9;
+    --secondary: #6D98BA;
+    --accent1: #B48291;
+    --accent2: #3A5A40;
+}
+
+/* GLOBAL */
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Delius', sans-serif;
-    background-color: #f8f8f8;
+    background-color: var(--primary);
     color: #333;
 }
 
-/* ---------- Header ---------- */
+h1, h2 {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/* HEADER */
 header {
-    background-color: #6D98BA;
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 25px 70px;
+    background: white;
+    border-bottom: 4px solid var(--accent2);
 }
 
-.logo {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 500;
+.logo img {
+    height: 140px;  
 }
 
 nav a {
-    color: white;
-    margin-left: 20px;
+    margin-left: 28px;
     text-decoration: none;
     font-family: 'Lexend Deca', sans-serif;
+    font-weight: 600;
+    color: var(--accent2);
+    font-size: 1.05rem;
 }
 
-nav a.active {
-    text-decoration: underline;
+nav a:hover {
+    color: var(--accent1);
 }
 
-/* ---------- Hero Section ---------- */
+/* HERO SECTION */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80");
-    background-size: cover;
-    background-position: center;
     text-align: center;
-    padding: 120px 30px;
-    color: white;
+    padding: 80px 20px;
 }
 
 .hero h1 {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 2.8rem;
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    color: var(--accent2);
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin: 15px 0 30px;
+.hero .subtitle {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #333;
 }
 
-.btn {
-    background-color: #3A5A40;
-    color: white;
-    padding: 12px 28px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-family: 'Lexend Deca';
-    font-size: 1.1rem;
-}
-
-/* ---------- Featured Section ---------- */
-.featured {
-    padding: 50px 40px;
+/* DISCOVER SECTION */
+.discover {
     text-align: center;
+    padding: 40px 20px;
 }
 
-.featured h2 {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 30px;
+.discover h2 {
+    font-size: 2.2rem;
+    color: var(--accent2);
 }
 
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
+.discover-container {
+    margin-top: 50px;
 }
 
-.card {
-    background-color: white;
-    padding: 20px;
+/* DISCOVER ROWS */
+.discover-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1200px;
+    margin: 60px auto;
+    gap: 50px;
+}
+
+.discover-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* IMAGES */
+.discover-image {
+    width: 700px;
+    height: 350px;
+    object-fit: cover;
     border-radius: 12px;
-    box-shadow: rgba(0,0,0,0.1) 0 4px 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 5px solid var(--accent2);
+}
+
+.discover-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+/* TEXT */
+.desc {
+    width: 330px;
     text-align: left;
-}
-
-/* ---------- Footer ---------- */
-footer {
-    background-color: #B48291;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-family: 'Lexend Deca';
-}
-
-/* ---------- Reusable formatting for future pages ---------- */
-
-.page-title {
-    font-family: 'Lexend Deca';
-    text-align: center;
-    font-size: 2.4rem;
-    margin: 40px 0 20px;
-}
-
-.section {
-    padding: 20px 40px;
-}
-
-.item-list {
-    display: grid;
-    gap: 20px;
-}
-
-.item {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: rgba(0,0,0,0.1) 0 4px 10px;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #333;
 }
