@@ -30,7 +30,7 @@ header {
 }
 
 .logo img {
-    height: 140px;  
+    height: 70px;
 }
 
 nav a {
@@ -76,18 +76,27 @@ nav a:hover {
     color: var(--accent2);
 }
 
-.discover-container {
-    margin-top: 50px;
+/* SLIDESHOW BACKGROUNDS */
+.slide-bg-1 {
+    background: #6D98BA;
+    padding: 40px 0;
+    border-radius: 12px;
 }
 
-/* DISCOVER ROWS */
+.slide-bg-2 {
+    background: #6D98BA;
+    padding: 40px 0;
+    border-radius: 12px;
+}
+
+/* DISCOVER ROW */
 .discover-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 85%;
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 0 auto;
     gap: 50px;
 }
 
@@ -101,7 +110,7 @@ nav a:hover {
     height: 350px;
     object-fit: cover;
     border-radius: 12px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s, box-shadow 0.25s;
     border: 5px solid var(--accent2);
 }
 
@@ -116,5 +125,46 @@ nav a:hover {
     text-align: left;
     font-size: 1.15rem;
     line-height: 1.5;
-    color: #333;
+}
+
+/* SLIDESHOW CORE */
+.slideshow-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* DOTS */
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--accent2);
+    transform: scale(1.2);
 }

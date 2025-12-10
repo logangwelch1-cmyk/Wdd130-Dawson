@@ -35,39 +35,104 @@
         </p>
     </section>
 
-    <!-- DISCOVER SECTION -->
+    <!-- DISCOVER SECTION WITH SLIDESHOW -->
     <section class="discover">
         <h2>Looking for something new?</h2>
 
-        <div class="discover-container">
+        <div class="slideshow-container" id="slideshow">
 
-            <!-- FATCATS -->
-            <div class="discover-row">
-                <a href="https://www.fatcatsfun.com/locations/rexburg/?gad_source=1&gad_campaignid=21099370074&gbraid=0AAAAA9cOu5pfYcaMLTpBIl8o_SUChTMsd&gclid=Cj0KCQiA6NTJBhDEARIsAB7QHD2_2yxkHnSsCbSLhMwBYOGqbQqAEuqem6Q-Jm0qyDdtA1Bye5iT6PUaAlPoEALw_wcB"
-                   target="_blank">
-                    <img src="image5.jpg" alt="Fat Cats" class="discover-image">
-                </a>
+            <!-- SLIDE 1 -->
+            <div class="slide fade slide-bg-1">
+                <div class="discover-row">
+                    <a href="https://www.fatcatsfun.com/locations/rexburg/"
+                       target="_blank">
+                        <img src="image5.jpg" alt="Fat Cats" class="discover-image">
+                    </a>
 
-                <p class="desc">
-                    Fat Cats Rexburg is a family-friendly entertainment center with bowling, movies, arcade 
-                    games, and delicious food. It’s perfect for date nights, group activities, or casual fun with friends.
-                </p>
+                    <p class="desc">
+                        Fat Cats Rexburg is a family-friendly entertainment center with bowling, movies, arcade 
+                        games, and delicious food. It’s perfect for date nights, group activities, or casual fun with friends.
+                    </p>
+                </div>
             </div>
 
-            <!-- REXBURG RAPIDS -->
-            <div class="discover-row reverse">
-                <a href="https://www.rexburg.org/o/rapids" target="_blank">
-                    <img src="image6.png" alt="Rexburg Rapids" class="discover-image">
-                </a>
+            <!-- SLIDE 2 -->
+            <div class="slide fade slide-bg-2">
+                <div class="discover-row reverse">
+                    <a href="https://www.rexburg.org/o/rapids" target="_blank">
+                        <img src="image6.png" alt="Rexburg Rapids" class="discover-image">
+                    </a>
 
-                <p class="desc">
-                    Rexburg Rapids is the best way to cool off in the summer! Featuring water slides, a lazy river,
-                    splash zones, and more — it's a local favorite for families and students.
-                </p>
+                    <p class="desc">
+                        Rexburg Rapids is the best way to cool off in the summer! Featuring water slides, a lazy river,
+                        splash zones, and more — it's a local favorite for families and students.
+                    </p>
+                </div>
             </div>
 
         </div>
+
+        <!-- DOT INDICATORS -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
     </section>
+
+    <!-- SLIDESHOW SCRIPT -->
+    <script>
+    let slideIndex = 1;
+    let slideInterval;
+
+    showSlides(slideIndex);
+    startAutoplay();
+
+    // Next / current slide controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    // Main slideshow function
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+    }
+
+    // Autoplay with pause on hover
+    function startAutoplay() {
+        slideInterval = setInterval(() => {
+            slideIndex++;
+            showSlides(slideIndex);
+        }, 4000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(slideInterval);
+    }
+
+    const slideshow = document.getElementById("slideshow");
+    slideshow.addEventListener("mouseenter", stopAutoplay);
+    slideshow.addEventListener("mouseleave", startAutoplay);
+    </script>
 
 </body>
 </html>
